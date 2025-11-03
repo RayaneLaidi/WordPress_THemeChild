@@ -1,0 +1,699 @@
+/*
+Theme Name: Astra Enfant - Drake
+Template: astra
+Version: 1.0.0
+Description: Thème enfant personnalisé pour le site de Drake
+*/
+
+/* ==========================================================================
+   RÉINITIALISATION COMPLÈTE
+   ========================================================================== */
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100vw !important;
+    overflow-x: hidden !important;
+    scroll-behavior: smooth;
+}
+
+body.drake-pleine-largeur {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+    font-family: 'Helvetica Neue', Arial, sans-serif;
+    background: var(--drake-fond) !important;
+    color: var(--drake-texte);
+}
+
+/* SUPPRIME TOUS LES CONTAINERS ASTRA */
+body.drake-pleine-largeur #page,
+body.drake-pleine-largeur #content,
+body.drake-pleine-largeur .site,
+body.drake-pleine-largeur .site-content,
+body.drake-pleine-largeur #primary,
+body.drake-pleine-largeur #main,
+body.drake-pleine-largeur .ast-container {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+}
+
+/* CONTENEUR PRINCIPAL */
+#conteneur-page-drake {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow-x: hidden !important;
+}
+
+/* ==========================================================================
+   VARIABLES
+   ========================================================================== */
+:root {
+    --drake-or: #d4af37;
+    --drake-sombre: #0a0a0a;
+    --drake-fond: #111111;
+    --drake-texte: #ffffff;
+    --drake-accent: #b8860b;
+    --drake-clair: #1a1a1a;
+}
+
+/* ==========================================================================
+   EN-TÊTE PERSONNALISÉ
+   ========================================================================== */
+.en-tete-drake {
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+.en-tete-drake .conteneur-drake {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.en-tete-drake .logo {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--drake-or);
+    font-family: 'Times New Roman', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    text-decoration: none;
+}
+
+.navigation-principale {
+    display: flex;
+    gap: 40px;
+}
+
+.navigation-principale a {
+    color: var(--drake-texte);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    transition: all 0.3s ease;
+    position: relative;
+    padding: 8px 0;
+}
+
+.navigation-principale a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--drake-or);
+    transition: width 0.3s ease;
+}
+
+.navigation-principale a:hover {
+    color: var(--drake-or);
+}
+
+.navigation-principale a:hover::after {
+    width: 100%;
+}
+
+/* ==========================================================================
+   SECTIONS PLEINE LARGEUR
+   ========================================================================== */
+.section-heros-drake,
+.section-albums-drake,
+.section-tournee-drake,
+.pied-page-drake {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    margin: 0 !important;
+    padding: 80px 0 !important; /* Réduit de 120px à 80px */
+    position: relative;
+}
+
+/* Sections avec nouvelles couleurs */
+.section-heros-drake {
+    background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)),
+                url('https://www.billboard.com/wp-content/uploads/2025/02/drake-ovo-2025-billboard-1548.jpg?w=1024') center/cover no-repeat;
+}
+
+.section-albums-drake {
+    background: #1a1a1a;
+    margin-top: 0 !important;
+}
+
+.section-tournee-drake {
+    background: #252525;
+    margin-top: 0 !important;
+}
+
+.pied-page-drake {
+    background: #0a0a0a;
+    margin-top: 0 !important;
+}
+
+/* SECTION HÉROS */
+.section-heros-drake {
+    min-height: 100vh;
+    background: 
+        linear-gradient(
+            135deg,
+            rgba(10, 10, 10, 0.8) 0%,
+            rgba(10, 10, 10, 0.5) 50%,
+            rgba(10, 10, 10, 0.9) 100%
+        ),
+        url('https://www.billboard.com/wp-content/uploads/2025/02/drake-ovo-2025-billboard-1548.jpg?w=1024') center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    color: white;
+}
+
+.contenu-heros {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    text-align: left;
+}
+
+.contenu-heros h1 {
+    font-size: 5.5rem;
+    font-weight: 300;
+    color: var(--drake-texte);
+    margin: 0 0 15px 0;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    text-transform: uppercase;
+    font-family: 'Times New Roman', serif;
+}
+
+.sous-titre-heros {
+    font-size: 1.3rem;
+    margin-bottom: 40px;
+    color: var(--drake-or);
+    font-weight: 300;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+}
+
+.etiquettes-heros {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 50px;
+    flex-wrap: wrap;
+}
+
+.etiquette {
+    background: rgba(212, 175, 55, 0.1);
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-size: 0.85rem;
+    color: var(--drake-or);
+    border: 1px solid var(--drake-or);
+    backdrop-filter: blur(10px);
+    font-weight: 500;
+    letter-spacing: 0.1em;
+}
+
+.boutons-appel-action {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+}
+
+.bouton-action {
+    background: var(--drake-or);
+    color: var(--drake-sombre);
+    padding: 16px 45px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-family: 'Helvetica Neue', sans-serif;
+    display: inline-block;
+}
+
+.bouton-action.secondaire {
+    background: transparent;
+    color: var(--drake-texte);
+    border: 2px solid var(--drake-texte);
+}
+
+.bouton-action:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 30px rgba(212, 175, 55, 0.3);
+    background: #e6c158;
+    color: #ffffff; /* Garde le texte blanc au hover */
+}
+
+.bouton-action.secondaire:hover {
+    background: rgba(255, 255, 255, 0.2); /* Fond semi-transparent */
+    color: #ffffff; /* Garde le texte blanc au hover */
+    border-color: #ffffff;
+}
+
+.bouton-billet {
+    background: var(--drake-or);
+    color: var(--drake-sombre);
+    padding: 14px 35px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: 'Helvetica Neue', sans-serif;
+    display: inline-block;
+}
+
+.bouton-billet:hover {
+    background: #e6c158;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+    color: #ffffff; /* Garde le texte blanc au hover */
+}
+
+/* SECTION ALBUMS */
+.section-albums-drake {
+    background: linear-gradient(135deg, #0a0a0a 0%, #1a1a1a 100%);
+    padding: 100px 0;
+}
+
+.titre-section {
+    color: var(--drake-texte);
+    font-size: 2.8rem;
+    text-align: center;
+    margin-bottom: 70px;
+    position: relative;
+    font-weight: 300;
+    font-family: 'Times New Roman', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.titre-section::after {
+    content: '';
+    display: block;
+    width: 100px;
+    height: 2px;
+    background: var(--drake-or);
+    margin: 25px auto;
+}
+
+.grille-albums {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.carte-album {
+    background: rgba(255,255,255,0.03);
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    transition: all 0.4s ease;
+    position: relative;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.carte-album::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--drake-or), transparent);
+    z-index: 2;
+}
+
+.carte-album:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(212, 175, 55, 0.15);
+    border-color: rgba(212, 175, 55, 0.3);
+}
+
+.couverture-album {
+    width: 100%;
+    height: 380px;
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.4s ease;
+}
+
+.carte-album:hover .couverture-album {
+    transform: scale(1.05);
+}
+
+.info-album {
+    padding: 30px 25px;
+    color: white;
+    text-align: center;
+    position: relative;
+}
+
+.titre-album {
+    font-size: 1.5rem;
+    font-weight: 400;
+    margin: 0 0 12px 0;
+    color: var(--drake-texte);
+    line-height: 1.3;
+    font-family: 'Times New Roman', serif;
+    letter-spacing: 0.05em;
+}
+
+.annee-album {
+    color: var(--drake-or);
+    font-size: 1rem;
+    font-weight: 500;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* SECTION TOURNÉE */
+.section-tournee-drake {
+    background: var(--drake-clair);
+    padding: 100px 0;
+}
+
+.dates-tournee {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.date-concert {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 35px 40px;
+    background: rgba(255,255,255,0.03);
+    border-radius: 15px;
+    border-left: 4px solid var(--drake-or);
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+.date-concert:hover {
+    transform: translateX(10px);
+    background: rgba(212, 175, 55, 0.05);
+}
+
+.info-date h3 {
+    margin: 0 0 8px 0;
+    color: var(--drake-texte);
+    font-size: 1.4rem;
+    font-weight: 400;
+    font-family: 'Times New Roman', serif;
+}
+
+.info-date p {
+    margin: 0;
+    color: var(--drake-or);
+    font-size: 1.1rem;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+}
+
+.bouton-billet {
+    background: var(--drake-or);
+    color: var(--drake-sombre);
+    padding: 14px 35px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-family: 'Helvetica Neue', sans-serif;
+    display: inline-block;
+}
+
+.bouton-billet:hover {
+    background: #e6c158;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(212, 175, 55, 0.3);
+    color: #ffffff; /* Garde le texte blanc au hover */
+}
+
+/* PIED DE PAGE */
+.pied-page-drake {
+    background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+    padding: 100px 0 50px 0;
+    color: white;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.pied-page-drake::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--drake-or), transparent);
+}
+
+.pied-page-drake h3 {
+    color: var(--drake-or);
+    font-size: 2.2rem;
+    margin-bottom: 40px;
+    font-weight: 300;
+    font-family: 'Times New Roman', serif;
+    text-transform: uppercase;
+    letter-spacing: 0.2em;
+    position: relative;
+    display: inline-block;
+}
+
+.pied-page-drake h3::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 2px;
+    background: var(--drake-or);
+}
+
+
+
+.lien-social {
+    font-size: 1rem;
+    margin: 0 15px;
+    color: var(--drake-or);
+    text-decoration: none;
+    transition: all 0.4s ease;
+    display: inline-block;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    border: 2px solid var(--drake-or);
+    border-radius: 50%;
+    background: rgba(212, 175, 55, 0.1);
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.lien-social:hover {
+    color: var(--drake-sombre);
+    background: var(--drake-or);
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 10px 25px rgba(212, 175, 55, 0.3);
+}
+
+.liens-pied-page {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 50px 0;
+    flex-wrap: wrap;
+}
+
+.liens-pied-page a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    position: relative;
+}
+
+.liens-pied-page a::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    background: var(--drake-or);
+    transition: width 0.3s ease;
+}
+
+.liens-pied-page a:hover {
+    color: var(--drake-or);
+}
+
+.liens-pied-page a:hover::after {
+    width: 100%;
+}
+
+.droits-auteur {
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 50px;
+    font-size: 0.9rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+}
+
+/* CONTENEUR PERSONNALISÉ */
+.conteneur-drake {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: border-box;
+}
+
+/* ==========================================================================
+   RESPONSIVE
+   ========================================================================== */
+@media (max-width: 1024px) {
+    .grille-albums {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        max-width: 500px;
+    }
+    
+    .carte-album {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+}
+
+@media (max-width: 768px) {
+    .en-tete-drake {
+        padding: 15px 0;
+    }
+    
+    .en-tete-drake .conteneur-drake {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .navigation-principale {
+        gap: 25px;
+    }
+    
+    .navigation-principale a {
+        font-size: 0.8rem;
+    }
+    
+    .contenu-heros h1 {
+        font-size: 3.5rem;
+    }
+    
+    .contenu-heros {
+        padding: 0 20px;
+        text-align: center;
+    }
+    
+    .boutons-appel-action {
+        flex-direction: column;
+        gap: 15px;
+    }
+    
+    .etiquettes-heros {
+        justify-content: center;
+    }
+    
+    .titre-section {
+        font-size: 2.2rem;
+    }
+    
+    .date-concert {
+        flex-direction: column;
+        text-align: center;
+        gap: 20px;
+        padding: 25px;
+    }
+    
+    .liens-pied-page {
+        flex-direction: column;
+        gap: 20px;
+    }
+    
+    .lien-social {
+        margin: 0 10px;
+        width: 50px;
+        height: 50px;
+        line-height: 50px;
+        font-size: 0.9rem;
+    }
+    
+    .conteneur-drake {
+        padding: 0 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contenu-heros h1 {
+        font-size: 2.8rem;
+    }
+    
+    .sous-titre-heros {
+        font-size: 1.1rem;
+    }
+    
+    .titre-section {
+        font-size: 2rem;
+    }
+    
+    .couverture-album {
+        height: 300px;
+    }
+    
+    .lien-social {
+        margin: 0 5px;
+        width: 45px;
+        height: 45px;
+        line-height: 45px;
+        font-size: 0.8rem;
+    }
+}
